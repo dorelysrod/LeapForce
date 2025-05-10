@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@font-face {
+  font-family: Alpina-Light;
+  src: url("../src/assets/fonts/GTAlpina-Light.otf");
+}
+
+@font-face{
+  font-family:TTCommons-DemiBold;
+  src: url("../src/assets/fonts/TT\ Commons\ Pro\ DemiBold.otf");
+}
+@font-face{
+  font-family:TTCommons-Normal ;
+  src: url("../src/assets/fonts/TT\ Commons\ Pro\ Normal.otf");
+}
+
+@font-face{
+  font-family:TTCommons-Medium ;
+  src: url("../src/assets/fonts/TT\ Commons\ Pro\ Medium.otf");
+}
