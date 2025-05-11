@@ -1,0 +1,62 @@
+## Algemeen
+- **Label**
+  - Required: Nee
+  - Default: "Label"
+  - Tooltip: Interne sectielabel boven de titel
+  - Constraints: Max 60 tekens
+
+- **Heading**
+  - Required: Ja
+  - Default: "Mandatory title about the"
+  - Tooltip: Hoofdtitel van de sectie
+  - Constraints: Max 100 tekens
+
+- **Subheading**
+  - Required: Ja
+  - Default: "call-to-action"
+  - Tooltip: Subtitel die onder de hoofdtitel komt
+  - Constraints: Max 80 tekens
+
+- **Subheading Highlight**
+  - Required: Ja
+  - Default: "here"
+  - Tooltip: Highlight woord in de subtitel
+  - Constraints: Max 30 tekens, één woord
+
+- **Description**
+  - Required: Nee
+  - Default: "Optional body copy goes here."
+  - Tooltip: Korte beschrijving onder de titel
+  - Constraints: Max 200 tekens
+
+## Call-to-action knop
+- **Button Text**
+  - Required: Nee
+  - Default: "Optional button"
+  - Tooltip: Tekst voor de call-to-action knop
+  - Constraints: Max 30 tekens
+
+- **Button Disabled**
+  - Required: Nee
+  - Default: false
+  - Tooltip: Schakel de knop tijdelijk uit
+  - Constraints: Boolean
+
+## CTA Items (herhaalbaar)
+- **Title**
+  - Required: Ja
+  - Default: "Title"
+  - Tooltip: Titel in de call-to-action kaart
+  - Constraints: Max 50 tekens
+
+- **Description**
+  - Required: Ja
+  - Default: "Supporting text about the call-to-action goes here."
+  - Tooltip: Ondersteunende tekst in de kaart
+  - Constraints: Max 150 tekens
+
+- **Image**
+  - Required: Ja
+  - Default: "/images/Image-CTA.png"
+  - Tooltip: Achtergrondafbeelding van de kaart
+  - Constraints: Enkel .jpg, .png of .webp. Min breedte: 800px
