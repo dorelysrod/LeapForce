@@ -28,7 +28,7 @@ Clone het project
 `npm install`
 
 ---
-### 3. Start de ontwikkelserver
+## 3. Start de ontwikkelserver
 ---
 Start de lokale ontwikkelserver met Vite:
 
