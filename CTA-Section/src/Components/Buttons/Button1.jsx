@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
-import arrowIcon from '../../assets/Icon/arrow.svg';
+import React from 'react';
+import ArrowIcon from '../icons/ArrowIcon';
+import useDisable from '../../hooks/useDisable';
 
-const Button1 = ({ text, disabled: propDisabled }) => {
-  const [disabled, setDisabled] = useState(propDisabled);
-
-  const handleClick = () => {
-    if (disabled) return;
-    setDisabled(true);
-    setTimeout(() => setDisabled(false), 2000);
-  };
+const Button1 = ({ text, disabled: propDisabled = false }) => {
+  const { ref, disabled, handleClick, handleDoubleClick } = useDisable(propDisabled);
 
   return (
     <button
+      type="button"
+      ref={ref}
       onClick={handleClick}
+      onDoubleClick={handleDoubleClick}
       disabled={disabled}
       aria-label={text}
       className={`
-        group relative flex items-center gap-2 px-6 py-3 transition-all
-        font-ttcommons-normal text-base sm:text-[19px]
-        bg-transparent border-none outline-none
+        group inline-flex items-center justify-center
+        w-[145px] h-[24px] md:w-[158px]
+        rounded-[26px] gap-[4px]
+        px-0 py-0 text-[17px] md:text-[19px]
+        font-ttcommons-normal transition-colors duration-200
         text-[#BF564D] hover:text-[#A6433A] focus:text-[#59201B] active:text-[#A6433A]
         disabled:text-[#A0A0A0] disabled:cursor-not-allowed
+        bg-transparent border-none outline-none
       `}
+      
+      
     >
       <span>{text}</span>
-      <img
-        src={arrowIcon}
-        alt="arrow icon"
-        className={`
-          w-4 h-4 transition-colors
-          group-disabled:filter group-disabled:brightness-[0] group-disabled:invert-[0.62]
-          group-enabled:filter group-enabled:brightness-[0] group-enabled:invert-[0.38] group-enabled:hue-rotate-[330deg]
-        `}
-      />
+      <ArrowIcon className="w-4 h-4 text-inherit transition-colors duration-200" />
     </button>
   );
 };

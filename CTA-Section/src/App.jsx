@@ -1,4 +1,4 @@
-import Layout from './Components/Layout';
+import Layout from './Pages/Layout';
 import layoutContent from './content';
 
 function App() {
