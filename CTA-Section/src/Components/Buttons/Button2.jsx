@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import arrowLine from '../../assets/Icon/arrowLine.svg';
+import React from 'react';
+import ArrowIcon from '../icons/ArrowIcon';
+import useDisable from '../../hooks/useDisable';
 
-const Button2 = ({ disabled = false }) => {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    if (disabled) return;
-    setClicked(true);
-    setTimeout(() => setClicked(false), 200); // Visual feedback only
-    console.log('Button clicked');
-  };
+const Button2 = () => {
+  const { ref, disabled, handleClick, handleDoubleClick } = useDisable(false);
 
   return (
     <button
+      type="button"
+      ref={ref}
       onClick={handleClick}
+      onDoubleClick={handleDoubleClick}
       disabled={disabled}
-      className={`absolute bottom-4 right-4 w-14 h-14 p-4 gap-1 rounded border-2 
-        flex items-center justify-center transition-all duration-200 ease-in-out
-        ${disabled
-          ? 'border-[#1B24264D] cursor-not-allowed opacity-50'
-          : 'border-white/30 hover:border-[#1B242680] focus:border-[#1B2426CC]'}
-        ${clicked && !disabled ? 'bg-white/10 scale-95' : ''}
-      `}
       aria-label="More about this action"
+      className={`
+        absolute bottom-4 right-4 w-14 h-14 p-4 flex items-center justify-center
+        rounded border-2 transition-all duration-200 ease-in-out
+        border-white/30 text-white
+        hover:border-[#1B242680] focus:border-[#1B2426CC]
+        disabled:border-[#1B2426] disabled:border-opacity-30
+        disabled:text-[#1B2426] disabled:text-opacity-30
+        disabled:cursor-not-allowed disabled:opacity-50
+      `}
     >
-      <img src={arrowLine} alt="" className="w-4 h-4" />
+      <ArrowIcon />
     </button>
   );
 };
