@@ -1,6 +1,6 @@
-import React from 'react';
-import ArrowIcon from '../icons/ArrowIcon';
-import useDisable from '../../hooks/useDisable';
+import React from "react";
+import ArrowIcon from "../icons/ArrowIcon";
+import useDisable from "../../hooks/useDisable";
 
 const Button2 = () => {
   const { ref, disabled, handleClick, handleDoubleClick } = useDisable(false);

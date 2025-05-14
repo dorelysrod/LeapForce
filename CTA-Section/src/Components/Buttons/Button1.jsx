@@ -1,9 +1,10 @@
-import React from 'react';
-import ArrowIcon from '../icons/ArrowIcon';
-import useDisable from '../../hooks/useDisable';
+import React from "react";
+import ArrowIcon from "../icons/ArrowIcon";
+import useDisable from "../../hooks/useDisable";
 
 const Button1 = ({ text, disabled: propDisabled = false }) => {
-  const { ref, disabled, handleClick, handleDoubleClick } = useDisable(propDisabled);
+  const { ref, disabled, handleClick, handleDoubleClick } =
+    useDisable(propDisabled);
 
   return (
     <button
@@ -23,9 +24,6 @@ const Button1 = ({ text, disabled: propDisabled = false }) => {
         disabled:text-[#A0A0A0] disabled:cursor-not-allowed
         bg-transparent border-none outline-none
       `}
-      
-      
-      
     >
       <span>{text}</span>
       <ArrowIcon className="w-4 h-4 text-inherit transition-colors duration-200" />
