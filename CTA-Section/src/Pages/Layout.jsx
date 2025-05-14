@@ -16,67 +16,75 @@ const Layout = ({ content = {} }) => {
 
   return (
     <main className="bg-[#FFFCFA] min-h-screen">
-      <section className="max-w-screen-xl mx-auto px-4 sm:px-6 flex flex-col gap-6 h-full">
-        {/* Header Section */}
-        <header className="mx-auto pt-12 flex flex-col items-center text-center w-full max-w-md sm:max-w-2xl md:max-w-3xl gap-6 border-t border-[#E0E0E0]">
-          <p className="font-ttcommons-normal text-[14px] md:text-[15px] text-[#39494D]">
-            {label}
-          </p>
-          <h1 className="font-ttcommons-demibold text-[36px] md:text-[40px] text-center">
+      <section className="max-w-screen-xl mx-auto px-4 sm:px-6 flex flex-col gap-6 md:gap-12 h-full mb-[30px] md:mb-[96px]">
+        <header className="mx-auto pt-8 flex flex-col items-center text-center w-full max-w-3xl gap-2 border-t border-[#E0E0E0]">
+          {/* Optional label */}
+          {label && (
+            <p className="font-ttcommons-regular text-[14px] leading-[16px] tracking-[0.02em] text-[#39494D] md:text-[15px]">
+              {label}
+            </p>
+          )}
+
+          {/* Main Title */}
+          <h1 className="text-[32px] xs:text-[36px] sm:text-[40px] font-ttcommons-demibold leading-tight tracking-tight">
             {heading}
             <br />
-            <span className="font-alpina-light text-[24px] md:text-[32px] block">
-              {subheading}
-              <span className="font-ttcommons-demibold">
-                {" "}
+            <span className="text-[34px] xs:text-[38px] sm:text-[46px] font-light font-alpina-light">
+              {subheading}{" "}
+              <span className="text-[32px] xs:text-[36px] sm:text-[40px] font-ttcommons-demibold">
                 {subheadingHighlight}
               </span>
             </span>
           </h1>
 
-          <p className="font-ttcommons-normal text-[17px] md:text-[19px] text-[#1E2526] opacity-80 text-center">
-            {description}
-          </p>
+          {/* Optional Description */}
+          {description && (
+            <p className="font-ttcommons-regular text-[15px] leading-[20px] tracking-[0.02em] text-[#1E2526] opacity-80">
+              {description}
+            </p>
+          )}
 
+          {/* Optional Button */}
           {button?.text && (
-            <div className="flex justify-center">
-              <Button1 text={button.text} disabled={button.disabled} />
-            </div>
+            <Button1
+              text={button.text}
+              disabled={button.disabled}
+              className="font-ttcommons-regular text-[15px] leading-[16px] tracking-[0.02em] w-full max-w-[200px]"
+            />
           )}
         </header>
 
         {/* CTA Section */}
-        <section className="py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[24px] max-w-[1312px] h-[515px] mx-auto w-full">
-            {ctaItems.map((item, i) => (
+        <section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-6 max-w-[1312px] mx-auto w-full m-1">
+            {ctaItems.map((item, index) => (
               <article
-                key={i}
-                className="relative w-full h-[515px] overflow-hidden gap-[10px]"
+                key={item.id || index}
+                className="relative w-full h-[515px] overflow-hidden rounded-lg group"
               >
                 <img
                   src={item.image}
-                  alt="Call to Action Background"
-                  className="w-[644px] h-[515px] object-cover rounded-[4px]"
+                  alt="Call to Action"
+                  className="w-full h-full object-cover rounded-lg"
                 />
-                <footer
-                  className="absolute bottom-0 left-0 w-full h-1/2 opacity-80"
-                  style={{
-                    background:
-                      "linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0) 100%)",
-                  }}
-                />
-                <div className="absolute bottom-4 left-4 right-20 flex justify-between w-[303px] sm:w-[596px] sm:h-[64px]">
-                  <div>
-                    <h3 className="font-ttcommons-demibold text-white text-[22px] md:text-[28px] leading-snug tracking-tight">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10 rounded-lg" />
+
+                <div className="absolute bottom-[16px] left-[16px] right-[16px] z-20 flex flex-row items-end justify-between gap-4">
+                  {/* Text */}
+                  <div className="text-white flex flex-col gap-2 w-[60%] lg:w-full break-words text-pretty">
+                    <h3 className="text-[28px] leading-[32px] font-ttcommons-demibold">
                       {item.title}
                     </h3>
-
-                    <p className="font-ttcommons-normal text-[19px] leading-[24px] tracking-normal font-medium text-white/80 mt-1 opacity-50">
+                    <p className="text-[17px] leading-[24px] font-[450] opacity-50 sm:text-[19px]">
                       {item.description}
                     </p>
                   </div>
+
+                  {/* Button */}
+                  <div className="shrink-0">
+                    <Button2 />
+                  </div>
                 </div>
-                <Button2 />
               </article>
             ))}
           </div>
