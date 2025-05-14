@@ -14,9 +14,13 @@ const Button2 = () => {
       disabled={disabled}
       aria-label="More about this action"
       className={`
-        absolute bottom-4 right-4 w-14 h-14 p-4 flex items-center justify-center
-        rounded border-2 transition-all duration-200 ease-in-out
+        w-12 h-12           
+        lg:w-14 lg:h-14     
+        p-3 lg:p-4
+        flex items-center justify-center gap-1
+        rounded-[4px] border-2
         border-white/30 text-white
+        transition-all duration-200 ease-in-out
         hover:border-[#1B242680] focus:border-[#1B2426CC]
         disabled:border-[#1B2426] disabled:border-opacity-30
         disabled:text-[#1B2426] disabled:text-opacity-30
