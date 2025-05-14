@@ -39,18 +39,14 @@ const Layout = ({ content = {} }) => {
 
           {/* Optional Description */}
           {description && (
-            <p className="font-ttcommons-regular text-[15px] leading-[20px] tracking-[0.02em] text-[#1E2526] opacity-80">
+            <p className="font-ttcommons-regular text-[23px] leading-[32px] tracking-[0em] text-[#1E2526] opacity-80 md:text-[21px] md:leading-[24px] md:tracking-[0em]">
               {description}
             </p>
           )}
 
           {/* Optional Button */}
           {button?.text && (
-            <Button1
-              text={button.text}
-              disabled={button.disabled}
-              className="font-ttcommons-regular text-[15px] leading-[16px] tracking-[0.02em] w-full max-w-[200px]"
-            />
+            <Button1 text={button.text} disabled={button.disabled} />
           )}
         </header>
 
